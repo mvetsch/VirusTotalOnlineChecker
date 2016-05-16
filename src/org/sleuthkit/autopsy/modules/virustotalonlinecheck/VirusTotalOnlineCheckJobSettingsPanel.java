@@ -10,6 +10,7 @@ public class VirusTotalOnlineCheckJobSettingsPanel extends IngestModuleIngestJob
     VirusTotalOnlineCheckJobSettingsPanel(VirusTotalOnlineCheckSettings settings) {
         initComponents();
         this.settings = settings;
+        this.apiKeyTextField.setText(settings.getApiKey());
     }
 
     /**
