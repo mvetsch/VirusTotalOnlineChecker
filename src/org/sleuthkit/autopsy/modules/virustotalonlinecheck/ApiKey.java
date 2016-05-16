@@ -15,7 +15,8 @@ public class ApiKey {
 
     private static final String apiUrl = "https://www.virustotal.com/vtapi/v2/file/report";
 
-    private static int allowedRequestsPerMinute = 4;
+    private final static int allowedRequestsPerMinute = 4;
+    private final static long msOfAMinute = 60 * 1000;
     private String apiKey;
 
     private LinkedList<Date> lastRequests = new LinkedList<>();
@@ -30,7 +31,12 @@ public class ApiKey {
         }
 
         Date relevantTimeStamp = lastRequests.get(lastRequests.size() - allowedRequestsPerMinute);
-        return new Date().getTime() - relevantTimeStamp.getTime();
+        long timeToWait = msOfAMinute - (new Date().getTime() - relevantTimeStamp.getTime());
+        
+        if (timeToWait < 0) {
+            timeToWait = 0;
+        }
+        return timeToWait;
     }
 
     public VirusTotalReport getReport(String resource) throws InterruptedException {
@@ -44,7 +50,8 @@ public class ApiKey {
 
         boolean successful = false;
         while (!successful) {
-            Thread.sleep(getTimeUntilNextPossibleRequest());
+            long time = getTimeUntilNextPossibleRequest();
+            Thread.sleep(time);
 
             VirusTotalReport result = getResult(url);
             if (result != null) {
