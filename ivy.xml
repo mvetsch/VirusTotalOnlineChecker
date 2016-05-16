@@ -1,0 +1,8 @@
+<ivy-module version="2.0">
+    <info organisation="org.sleuthkit.autopsy.modules" module="virustotalonlinecheck"/>
+    <dependencies> 
+	<!-- http://mvnrepository.com/artifact/org.json/json -->
+	<dependency org="org.json" name="json" rev="20160212"/> 
+    </dependencies>
+</ivy-module>
+
