@@ -25,6 +25,7 @@ public class VirusTotalOnlineCheckJobSettingsPanel extends IngestModuleIngestJob
         jLabel1 = new javax.swing.JLabel();
         apiKeyLabel = new javax.swing.JLabel();
         apiKeyTextField = new javax.swing.JTextField();
+        apiKeyInfoLabel = new javax.swing.JLabel();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(VirusTotalOnlineCheckJobSettingsPanel.class, "VirusTotalOnlineCheckJobSettingsPanel.jLabel1.text")); // NOI18N
 
@@ -42,6 +43,9 @@ public class VirusTotalOnlineCheckJobSettingsPanel extends IngestModuleIngestJob
             }
         });
 
+        apiKeyInfoLabel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(apiKeyInfoLabel, org.openide.util.NbBundle.getMessage(VirusTotalOnlineCheckJobSettingsPanel.class, "VirusTotalOnlineCheckJobSettingsPanel.apiKeyInfoLabel.text")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -49,9 +53,11 @@ public class VirusTotalOnlineCheckJobSettingsPanel extends IngestModuleIngestJob
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(apiKeyLabel)
-                    .addComponent(apiKeyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(123, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(apiKeyLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(apiKeyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(apiKeyInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -60,8 +66,12 @@ public class VirusTotalOnlineCheckJobSettingsPanel extends IngestModuleIngestJob
                 .addComponent(apiKeyLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(apiKeyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(242, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(apiKeyInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(182, Short.MAX_VALUE))
         );
+
+        apiKeyInfoLabel.getAccessibleContext().setAccessibleName(org.openide.util.NbBundle.getMessage(VirusTotalOnlineCheckJobSettingsPanel.class, "VirusTotalOnlineCheckJobSettingsPanel.apiKeyInfoLabel.AccessibleContext.accessibleName")); // NOI18N
     }// </editor-fold>//GEN-END:initComponents
 
     private void apiKeyTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apiKeyTextFieldActionPerformed
@@ -79,6 +89,7 @@ public class VirusTotalOnlineCheckJobSettingsPanel extends IngestModuleIngestJob
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel apiKeyInfoLabel;
     private javax.swing.JLabel apiKeyLabel;
     private javax.swing.JTextField apiKeyTextField;
     private javax.swing.JLabel jLabel1;
