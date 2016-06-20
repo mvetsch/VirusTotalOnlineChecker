@@ -32,7 +32,7 @@ public class ApiKey {
 
         Date relevantTimeStamp = lastRequests.get(lastRequests.size() - allowedRequestsPerMinute);
         long timeToWait = msOfAMinute - (new Date().getTime() - relevantTimeStamp.getTime());
-        
+
         if (timeToWait < 0) {
             timeToWait = 0;
         }
@@ -90,10 +90,13 @@ public class ApiKey {
             return new VirusTotalReport();
         }
 
-        int positives = response.getInt("positives");
-        if (positives > 0) {
-            String permaLink = response.getString("permalink");
-            return new VirusTotalReport(permaLink);
+        try {
+            int positives = response.getInt("positives");
+            if (positives > 0) {
+                String permaLink = response.getString("permalink");
+                return new VirusTotalReport(permaLink);
+            }
+        } catch (Exception e) {
         }
         return new VirusTotalReport();
     }
