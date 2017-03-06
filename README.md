@@ -8,4 +8,4 @@ Autopsy File Ingest Module to check file hashes against online VirusTotal Databa
 Public API of VirusTotal.com is limited to 4 requests per minute. This module takes a lot of time for big data-sources.
 
 ## Downloads
-A compiled verion of this module can be downloaded here: http://www.nitcorn.ch/org-sleuthkit-autopsy-modules-virustotalonlinecheck.nbm
+A compiled verion of this module can be downloaded downloaded in the release tab of the github project.
